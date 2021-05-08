@@ -5,7 +5,7 @@ import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../Asets/Images/userPhoto.png";
 
 
-const ProfileInfo = ({profile, status, updateStatus}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner}) => {
 
    if (!profile) {
        return <Preloader />
@@ -15,7 +15,8 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
         <div>
 
             <div className={style.descriptionBlock}>
-                <img src={profile.photos.large || userPhoto}  />
+                <img src={profile.photos.large || userPhoto} />
+                {isOwner && <input type={"file"}/> }
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
 
