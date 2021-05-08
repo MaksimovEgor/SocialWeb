@@ -1,3 +1,11 @@
-header {
-  background-color: steelblue;
+.navbarrr {
+    background-color: #777575;
+    padding: 20px;
+}
+.navbarrr a {
+    color: white;
+    text-decoration: none;
+}
+.navbarrr .activeLink a {
+    color: gold;
 }

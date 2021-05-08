@@ -3,9 +3,8 @@ import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
 
-let store = {
+let PREVStore = {
     _state: {
-
         profilePage: {
             posts: [
                 {id: 1, message: 'Hi men', likesCounter: 83},
@@ -75,8 +74,8 @@ let store = {
 }
 
 
-window.store = store;
-export default store;
+window.store = PREVStore;
+export default PREVStore;
 
 
 

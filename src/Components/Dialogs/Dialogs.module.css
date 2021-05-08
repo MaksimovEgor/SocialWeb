@@ -1,10 +1,21 @@
-
-.header img {
-  width: 50px;
-  background-color: #051c0e;
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
 }
-.header {
-  grid-area: h;
-  background-color: #084723;
-  color: white;
+.dialogItem {
+    padding: 10px;
+}
+
+.messages {
+    padding: 2px;
+    color: cadetblue;
+}
+.dialog img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.myID {
+    float: right;
 }

@@ -1,10 +1,22 @@
-.content img{
-    width: 1150px;
-    height: 250px;
+.marker {
+    width: 20px;
+    height: 20px;
 }
 
-.postItem img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
+.description {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Apple Color Emoji";
 }
+
+.mainImage img {
+    height: 250px;
+    width: 1100px;
+}
+
+.descriptionBlock img {
+   
+    height: 200px;
+    width: 300px;
+}
+

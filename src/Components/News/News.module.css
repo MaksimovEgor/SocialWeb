@@ -1,9 +1,0 @@
-.navbar {
-    grid-area: n;
-    background-color: #169131;
-    color: white;
-}
-
-navbar.item {
-    text-decoration: none;
-}

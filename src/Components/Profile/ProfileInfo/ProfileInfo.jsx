@@ -1,23 +1,52 @@
 import React from 'react';
-import style from "./Profile.module.css";
-import MyPosts from "./MyPosts/MyPosts";
+import style from './ProfileInfo.module.css';
+import Preloader from "../../Common/Preloader/Preloader";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
-const Profile = () => {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+
+   if (!profile) {
+       return <Preloader />
+   }
+
     return (
         <div>
 
-            <div className={style.content}>
-                <img  src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2018/08/hubble_contributes_to_painting_a_picture_of_the_evolving_universe/17651944-1-eng-GB/Hubble_contributes_to_painting_a_picture_of_the_evolving_Universe_pillars.jpg"/>
+            <div className={style.descriptionBlock}>
+                <img src={profile.photos.large} />
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
 
-            <div> Ava + description </div>
 
-            <MyPosts />
+
+
+            <div>
+                <span className={style.description}>"About profile "</span>
+                {profile.aboutMe}
+            </div>
+            <div>
+                <span className={style.description}>"Looking for a job?"</span>
+                {profile.lookingForAJob ? "YES!!!" : "No"}
+            </div>
+            <div>
+                <span className={style.description}>"Подробнее:"</span>
+                {profile.lookingForAJobDescription}</div>
+            <div>
+                <span className={style.description}>"Full name" </span>
+                {profile.fullName}
+            </div>
+            <div>
+                <span className={style.description}>"Contacts" </span>
+                {profile.contacts.instagram}
+            </div>
 
         </div>
-
     )
 }
 
-export default Profile;
+export default ProfileInfo;
+
+
+
+

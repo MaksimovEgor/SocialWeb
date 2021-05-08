@@ -1,5 +1,7 @@
 import React from 'react';
-import style from './../Posts/Post.module.css';
+import style from './/Post.module.css';
+
+
 
 const Post = (props) => {
     return (
@@ -8,12 +10,13 @@ const Post = (props) => {
             {
                 props.message
             }
-            <div>Likes {props.LikesCounter}</div>
+            <div>Likes {props.likesCount}</div>
         </div>
     )
 
 }
 
 export default Post;
+
 
 
