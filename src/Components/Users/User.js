@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Users.module.css';
-import userPhoto from "../Asets/Images/user.png";
+import userPhoto from "../Asets/Images/userPhoto.png";
 import {NavLink} from "react-router-dom";
 
 
