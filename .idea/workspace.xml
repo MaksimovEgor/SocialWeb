@@ -13,7 +13,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7fb9ce5-7c51-4f6a-a2f7-2b9097394f08" name="Default Changelist" comment="" />
+    <list default="true" id="e7fb9ce5-7c51-4f6a-a2f7-2b9097394f08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +235,7 @@
       <workItem from="1619884901036" duration="3091000" />
       <workItem from="1619941454972" duration="9259000" />
       <workItem from="1620227357932" duration="40000" />
-      <workItem from="1620228956207" duration="9866000" />
+      <workItem from="1620228956207" duration="16049000" />
     </task>
     <servers />
   </component>
@@ -282,12 +289,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/redux/users-reducer.js</url>
-          <line>42</line>
+          <line>92</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/index.js</url>
-          <line>6</line>
+          <line>5</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
