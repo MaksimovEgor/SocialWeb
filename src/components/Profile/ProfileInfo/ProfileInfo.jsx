@@ -6,7 +6,7 @@ import userPhoto from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
 
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveData}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveData: saveProfile}) => {
 
     let [editMode, setEditMode] = useState(false);
 
@@ -20,8 +20,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveDat
         }
     }
     const onSubmit = (formData) => {
-        saveData(formData);
-        setEditMode(false);
+        saveProfile(formData).then(
+            () => {setEditMode(false)}
+        );
     }
 
     return (
