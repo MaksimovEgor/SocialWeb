@@ -3,8 +3,10 @@ import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
+import ProfileDataForm from "./ProfileDataForm";
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveData}) => {
 
     let [editMode, setEditMode] = useState(false);
 
@@ -17,6 +19,10 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
             savePhoto(e.target.files[0]);
         }
     }
+    const onSubmit = (formData) => {
+        saveData(formData);
+        setEditMode(false);
+    }
 
     return (
         <div>
@@ -27,7 +33,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 
                 {editMode
-                    ? <ProfileDataForm profile={profile}/>
+                    ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
                     : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
 
 
@@ -68,26 +74,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
         </div>
     </div>
 }
-const ProfileDataForm = ({profile}) => {
-    return <div>
-        <div>
-            <b>Full name:</b> {profile.fullName}
-        </div>
 
-        <div>
-            <b>Looking for a job?:</b> {profile.lookingForAJob ? "yes" : "no"}
-            {profile.lookingForAJob &&
-            <div>
-                <b>Skills:</b> : {profile.lookingForAJobDescription}
-            </div>}
-        </div>
 
-        <div>
-            <b>Contacts:</b> {Object.keys(profile.contacts).map(key => {
-            return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
-        })}
-        </div>
-    </div>
-}
 
 export default ProfileInfo;
