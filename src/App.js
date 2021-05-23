@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {HashRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, withRouter} from "react-router-dom";
 
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -19,9 +19,20 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 
 class App extends Component {
+
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert("Error occurred");
+    }
+
     componentDidMount() {
         this.props.initializeApp();
-    }
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
+        }
+
+        componentWillUnmount() {
+            window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
+        }
+
 
     render() {
         if (!this.props.initialized) {
@@ -44,6 +55,12 @@ class App extends Component {
 
                             <Route path='/login'
                                    render={() => <LoginPage/>}/>
+
+                            <Route exact path='/'
+                                   render={ () => <Redirect to='/profile'/> }/>
+
+                            <Route path='*'
+                                   render={() => <div>404 NOT FOUND</div>}/>
                         </div>
                     </div>
         )
@@ -59,11 +76,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 const SamuraiJSApp = (props) => {
-   return <HashRouter >
+   return <BrowserRouter >
         <Provider store={store}>
             <AppContainer />
         </Provider>
-    </HashRouter>
+    </BrowserRouter>
 }
 
 export default SamuraiJSApp;
